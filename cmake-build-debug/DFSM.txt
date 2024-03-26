@@ -1,0 +1,90 @@
+{ROOT -> NULL ALL}
+
+{ROOT -> INIT? =}
+{INIT? -> INIT ALL}
+{INIT? -> COMP =}
+
+{ROOT -> INT? 0123456789}
+{INT? -> INT ALL}
+{INT? -> FLOAT? .}
+{INT? -> INT? 0123456789}
+{FLOAT? -> FLOAT ALL}
+{FLOAT? -> FLOAT? 0123456789}
+
+{VAR? -> VAR ALL}
+{VAR? -> VAR? ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_0123456789}
+{ROOT -> VAR? ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_}
+
+{ROOT -> BIN? &}
+{BIN? -> BIN ALL}
+{BIN? -> COMP &}
+{BIN? -> BININIT =}
+
+{ROOT -> OP? *%^}
+{OP? -> OP ALL}
+{OP? -> OPINIT =}
+
+{ROOT -> SLASH /}
+{SLASH -> OP ALL}
+{SLASH -> OPINIT =}
+{SLASH -> COM? /}
+{COM? -> COM? ALL}
+{COM? -> COM ENDL}
+{SLASH -> BCOM? *}
+{BCOM? -> BCOM? ALL}
+{BCOM? -> END? *}
+{END? -> BCOM? ALL}
+{END? -> END? *}
+{END? -> COM /}
+
+
+{ROOT -> COMP? ><}
+{COMP? -> SOFTCOMP ALL}
+{COMP? -> COMP =}
+
+{ROOT -> COMP2? !}
+{COMP2? -> COMP =}
+
+{ROOT -> BIN2? |}
+{BIN2? -> BIN ALL}
+{BIN2? -> BININIT =}
+{BIN2? -> COMP |}
+
+{ROOT -> OP2? +}
+{OP2? -> OP ALL}
+{OP2? -> INC +}
+{OP2? -> OPINIT =}
+
+{ROOT -> OP3? -}
+{OP3? -> OP ALL}
+{OP3? -> DEC -}
+{OP3? -> OPINIT =}
+
+{ROOT -> SPEC_ON "}
+{SPEC_ON -> SPEC_ON ALL}
+{SPEC_ON -> SPEC_OFF \}
+{SPEC_OFF -> SPEC_ON ALL}
+{SPEC_ON -> STRING "}
+
+{ROOT -> CHAR? '}
+{CHAR? -> CHARW ALL}
+{CHAR? -> SCHAR? \}
+{SCHAR? -> CHARW ALL}
+{CHARW -> CHAR '}
+
+{CHAR - Nothing - Char}
+{COM - Nothing - Comment}
+{STRING - Nothing - String}
+{DEC - Nothing - Oper}
+{INC - Nothing - Oper}
+{SOFTCOMP - OneLetter - Oper}
+{OPINIT - Nothing - Oper}
+{OP - OneLetter - Oper}
+{BININIT - Nothing - Oper}
+{BIN - OneLetter - Oper}
+{VAR - OneLetter - Var}
+{FLOAT - OneLetter - Float}
+{NULL - Nothing - Punct}
+{INT - OneLetter - Integer}
+{INIT - OneLetter - Oper}
+{COMP - Nothing - Oper}

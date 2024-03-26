@@ -1,0 +1,18 @@
+{type -> int bool char double void float name}
+{operator -> for while if block exp definition return try throw _code_}
+{exp -> prior12}
+{prior12 -> prior11}
+{prior11 -> prior10}
+{prior10 -> prior9}
+{prior9 -> prior8}
+{prior8 -> prior7}
+{prior7 -> prior6}
+{prior6 -> prior5}
+{prior5 -> prior4}
+{prior4 -> prior3}
+{prior3 -> prior2 const}
+{prior2 -> prior1 ++ -- + - * &}
+{prior1 -> ( name}
+{block -> { }
+{definition -> type}
+

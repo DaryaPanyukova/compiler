@@ -1,0 +1,8 @@
+April 21, 2022 19:30:05 message: Test started.
+April 21, 2022 19:30:05 message: Factorization...
+April 21, 2022 19:30:05 message: Anlizing...
+April 21, 2022 19:30:05 message: Factorization time: 0.000372
+April 21, 2022 19:30:05 message: Anlizing time: 0.034306
+April 21, 2022 19:30:05 message: Total time: 0.045954
+April 21, 2022 19:30:05 message: Testing time: 0.592806
+April 21, 2022 19:30:05 message: Average: 0.045954
